@@ -1,3 +1,4 @@
+# Setting up Vagrant
 # Update packages
 apt-get -y update
 
@@ -43,5 +44,4 @@ cp /projects/tools/initdocker.sh /home/vagrant
 cp /projects/tools/rundocker.sh /home/vagrant
 
 # Execute devcompo.sh in your environment after
-echo "Now generate your ssh key, set it up with git and execute devcompo.sh in the projects folder when everything is setup"
-
+echo "Now start initdocker.sh and execute devcompo.sh in the projects folder to set everything else up"
