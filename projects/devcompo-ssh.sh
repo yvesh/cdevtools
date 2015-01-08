@@ -24,5 +24,6 @@ git clone git@github.com:compojoom/Matukio.git
 git clone git@github.com:compojoom/Hotspots.git
 git clone git@github.com:compojoom/CComment.git
 git clone git@github.com:compojoom/Tiles.git
+#git clone git@github.com:compojoom/CMigrator.git
 
 echo "Git pull complete - now create the symlinks with symlink.sh"
