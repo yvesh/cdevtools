@@ -29,6 +29,18 @@
 			<td colspan="2"></td>
 		</tr>
 		<tr>
+			<td colspan="2"><a href="sql/create_dbs.php">Create Databases</a></td>
+		<tr>
+		<tr>
+                        <td colspan="2"><a href="sql/import.php">Import Extension SQL</a></td>
+                <tr>
+		<tr>
+                        <td colspan="2"></td>
+                </tr>
+		<tr>
+			<td colspan="2">Remember to use #__dev as prefix :-)</td>
+		</tr>
+		<tr>
 			<td>Joomla 3.3:</td>
 			<td><a href="/j33d">Development</a></td>
 		</tr>

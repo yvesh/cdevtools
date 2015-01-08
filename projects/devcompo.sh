@@ -31,12 +31,4 @@ git clone https://github.com:compojoom/CComment.git
 git clone https://github.com:compojoom/Tiles.git
 
 # Symlinking
-symlinker Matukio/source /projects/www/j33d
-symlinker Matukio/source /projects/www/j25d
-symlinker lib_compojoom/source /projects/www/j33d
-symlinker lib_compojoom/source /projects/www/j25d
-symlinker Hotspots/source /projects/www/j33d
-symlinker Hotspots/source /projects/www/j25d
-
-
-echo "Symlinking complete"
+echo "Now execute symlink.sh"

@@ -6,7 +6,6 @@ echo "Preparing compojoom development tools"
 git config --global user.name "Yves Hoppe"
 git config --global user.email "yves@compojoom.com"
 
-# TODO add ssh key
 git clone git@github.com:compojoom/lib_compojoom.git
 git clone git@github.com:compojoom/buildtools.git
 git clone git@github.com:compojoom/cmc.git
@@ -26,13 +25,4 @@ git clone git@github.com:compojoom/Hotspots.git
 git clone git@github.com:compojoom/CComment.git
 git clone git@github.com:compojoom/Tiles.git
 
-# Symlinking
-symlinker Matukio/source /projects/www/j33d
-symlinker Matukio/source /projects/www/j25d
-symlinker lib_compojoom/source /projects/www/j33d
-symlinker lib_compojoom/source /projects/www/j25d
-symlinker Hotspots/source /projects/www/j33d
-symlinker Hotspots/source /projects/www/j25d
-
-
-echo "Symlinking complete"
+echo "Git pull complete - now create the symlinks with symlink.sh"
