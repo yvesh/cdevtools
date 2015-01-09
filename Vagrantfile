@@ -5,6 +5,11 @@ VAGRANTFILE_API_VERSION = "2"
     # use the default ubuntu 64bit image
     config.vm.box = "ubuntu/trusty64"
 
+    config.vm.provider "virtualbox" do |v|
+        v.memory = 1024
+        v.cpus = 2
+    end
+
     # enable private access to the machine via a static ip address
     config.vm.network "private_network", ip: "10.42.0.2"
 

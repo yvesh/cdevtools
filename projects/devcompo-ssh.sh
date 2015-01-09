@@ -26,4 +26,8 @@ git clone git@github.com:compojoom/CComment.git
 git clone git@github.com:compojoom/Tiles.git
 #git clone git@github.com:compojoom/CMigrator.git
 
+# Joomla
+git clone https://github.com/joomla/coding-standards.git
+git clone https://github.com/joomla/joomla-cms.git
+
 echo "Git pull complete - now create the symlinks with symlink.sh"

@@ -13,7 +13,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN apt-get update
 
 # we use the enviroment variable to stop debconf from asking questions..
-RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y mysql-server apache2 php5 php5-cli php5-mysql php-pear mysql-client php5-xdebug php5-curl curl php5-mcrypt pear-channels wget unzip
+RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y mysql-server apache2 php5 php5-cli php5-mysql php-pear mysql-client php5-xdebug php5-curl curl php5-mcrypt pear-channels wget unzip git
 
 # Install phpmyadmin
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install phpmyadmin
@@ -24,6 +24,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Install phing
 RUN pear config-set preferred_state alpha
 # RUN pear channel-discover pear.phing.info
+RUN pear install --alldeps PHP_CodeSniffer-1.5.3
 RUN pear install --alldeps phing/phing
 RUN pear install --alldeps Console_CommandLine
 # RUN pear install --alldeps PHP_CodeSniffer 
@@ -35,7 +36,7 @@ ADD apache2.conf /etc/apache2/apache2.conf
 RUN useradd -s /usr/sbin/nologin -d /projects/www compojoom
 
 # Update apache envvars
-Add envvars /etc/apache2/envvars
+ADD envvars /etc/apache2/envvars
 
 # Apache site conf
 ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
@@ -56,6 +57,9 @@ RUN chmod 777 /etc/service/apache2/run
 
 # clean up tmp files (we don't need them for the image)
 RUN rm -rf /tmp/* /var/tmp/*
+
+# Coding standards
+RUN git clone https://github.com/joomla/coding-standards.git `pear config-get php_dir`/PHP/CodeSniffer/Standards/Joomla
 
 # Create mount directory for http
 VOLUME ['/projects/www']

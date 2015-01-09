@@ -9,6 +9,7 @@ apt-get -y install git wget unzip
 DEBIAN_FRONTEND='noninteractive' apt-get install -y php5-cli php5-mysql php-pear mysql-client php5-xdebug php5-curl curl php5-mcrypt pear-channels
 
 pear config-set preferred_state alpha
+pear install --alldeps PHP_CodeSniffer-1.5.3
 pear install --alldeps phing/phing
 pear install --alldeps Console_CommandLine
 
@@ -42,6 +43,9 @@ chmod a+x /usr/bin/symlinker
 cp /projects/tools/bashdocker.sh /home/vagrant
 cp /projects/tools/initdocker.sh /home/vagrant
 cp /projects/tools/rundocker.sh /home/vagrant
+
+# Install Joomla standard
+git clone https://github.com/joomla/coding-standards.git `pear config-get php_dir`/PHP/CodeSniffer/Standards/Joomla
 
 # Execute devcompo.sh in your environment after
 echo "Now start initdocker.sh and execute devcompo.sh in the projects folder to set everything else up"

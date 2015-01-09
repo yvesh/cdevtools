@@ -30,5 +30,9 @@ git clone https://github.com:compojoom/Hotspots.git
 git clone https://github.com:compojoom/CComment.git
 git clone https://github.com:compojoom/Tiles.git
 
+# Joomla
+git clone https://github.com/joomla/coding-standards.git
+git clone https://github.com/joomla/joomla-cms.git
+
 # Symlinking
 echo "Now execute symlink.sh"
